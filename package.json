@@ -1,6 +1,6 @@
 {
   "name": "jay_test_github_actions",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "asd",
   "main": "lib/commonjs/index.js",
   "scripts": {
