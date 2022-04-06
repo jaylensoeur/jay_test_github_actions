@@ -37,3 +37,4 @@ jobs:
           npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN_PACKAGES }}
+          NPM_TOKEN: $ {{ secret.NPM_TOKEN }}
