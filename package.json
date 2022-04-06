@@ -1,11 +1,12 @@
 {
   "name": "jay_test_github_actions",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "asd",
-  "main": "lib/commonjs/index.js",
+  "main": "src/index.ts",
   "scripts": {
     "postpublish": "git push",
-    "prepare": "bob build"
+    "prepare": "bob build",
+    "release": "release-it"
   },
   "repository": {
     "type": "git",
@@ -16,9 +17,28 @@
   "bugs": {
     "url": "https://github.com/jaylensoeur/jay_test_github_actions/issues"
   },
+  "release-it": {
+    "git": {
+      "commitMessage": "chore: release ${version}",
+      "tagName": "v${version}"
+    },
+    "npm": {
+      "publish": true
+    },
+    "github": {
+      "release": true
+    },
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "preset": "angular"
+      }
+    }
+  },
   "homepage": "https://github.com/jaylensoeur/jay_test_github_actions#readme",
   "dependencies": {
+    "@release-it/conventional-changelog": "^4.2.2",
     "react-native-builder-bob": "^0.18.2",
+    "release-it": "^14.14.0",
     "typescript": "^4.6.3"
   },
   "devDependencies": {
@@ -38,8 +58,6 @@
     "source": "src",
     "output": "lib",
     "targets": [
-      "commonjs",
-      "module",
       "typescript"
     ]
   },
