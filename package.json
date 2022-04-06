@@ -1,12 +1,14 @@
 {
   "name": "jay_test_github_actions",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "asd",
   "main": "src/index.ts",
   "scripts": {
+    "prepublishOnly": "npm version patch",
     "postpublish": "git push",
     "prepare": "bob build",
-    "release": "release-it"
+    "release": "release-it",
+    "patch": "npm version patch"
   },
   "repository": {
     "type": "git",
