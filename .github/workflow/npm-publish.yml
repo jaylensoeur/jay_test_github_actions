@@ -1,0 +1,37 @@
+name: Publish
+
+on:
+  pull_request:
+    types:
+      - closed
+    branches:
+      - 'main'
+
+jobs:
+  if_merged:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [ 14.x ]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+          ref: ${{ github.event.pull_request.head.ref }}
+      - name: setup git config
+        run: |
+          git config user.name "jay_ci"
+          git config user.email "jay@ittyit.com"
+      - name: npm install
+        run: |
+          npm install
+      - name: npm publish
+        run: |
+          npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN_PACKAGES }}
