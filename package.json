@@ -1,6 +1,6 @@
 {
   "name": "jay_test_github_actions",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "asd",
   "main": "src/index.ts",
   "scripts": {
