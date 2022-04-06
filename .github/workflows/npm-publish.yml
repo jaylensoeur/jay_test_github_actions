@@ -23,6 +23,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           registry-url: https://npm.pkg.github.com/
+          scope: '@jaylensoeur'
           ref: ${{ github.event.pull_request.head.ref }}
       - name: setup git config
         run: |
