@@ -1,23 +1,50 @@
 {
-  "name": "test_github_actions",
-  "version": "1.0.0",
+  "name": "jay_test_github_actions",
+  "version": "1.0.1",
   "description": "asd",
-  "main": "index.js",
+  "main": "lib/commonjs/index.js",
   "scripts": {
     "postpublish": "git push",
     "prepare": "bob build"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jaylensoeur/test_github_actions.git"
+    "url": "git+https://github.com/jaylensoeur/jay_test_github_actions.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jaylensoeur/test_github_actions/issues"
+    "url": "https://github.com/jaylensoeur/jay_test_github_actions/issues"
   },
-  "homepage": "https://github.com/jaylensoeur/test_github_actions#readme",
+  "homepage": "https://github.com/jaylensoeur/jay_test_github_actions#readme",
   "dependencies": {
+    "react-native-builder-bob": "^0.18.2",
+    "typescript": "^4.6.3"
+  },
+  "devDependencies": {
     "react-native-builder-bob": "^0.18.2"
-  }
+  },
+  "react-native": "src/index.ts",
+  "module": "lib/module/index.js",
+  "types": "lib/typescript/src/index.d.ts",
+  "files": [
+    "src",
+    "lib",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__"
+  ],
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      "commonjs",
+      "module",
+      "typescript"
+    ]
+  },
+  "eslintIgnore": [
+    "node_modules/",
+    "lib/"
+  ]
 }

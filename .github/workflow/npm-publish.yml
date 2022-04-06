@@ -33,3 +33,5 @@ jobs:
       - name: npm publish
         run: |
           npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN_PACKAGES }}
